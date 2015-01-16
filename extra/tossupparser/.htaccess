@@ -1,0 +1,5 @@
+AuthType basic
+AuthName "Restricted Area"
+AuthGroupFile /dev/null
+AuthUserFile /home/content/92/11269592/htconfig/.htpassword.ghtpassword
+Require user rohitx15

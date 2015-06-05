@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+
+    <title>Quinterest: A Searchable Quiz Bowl Database</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/favicon">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Modals -->
+    <!-- aboutModal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal title" id="aboutLabel">About Quinterest</h3><h5>Version 3.0</h5>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body">
+                    <p>Quinterest is a quiz bowl search engine, to help players play and write better. The name derives from the combination of “quiz bowl” and “interest.” The website has no affiliation with Pinterest.</p>
+                    <hr>
+                    <p>Quinterest is simply a very elegant, streamlined database search engine. Certain aspects were taken into consideration when the search engine was created that would inprove upon user experience.</p>
+                    <strong>For example:</strong>
+                    <ul>
+                        <li>The search engine is designed to be clean and easy-on-the-eyes, allowing users to focus more overall and have a better experience, all thanks to Twitter Bootstrap.
+                        <li>When viewing results, there is no pagination (unlimited results per page). This allows users to identify clues from individual questions more easily. In addition, when searching, the page does not refresh which saves your selected search parameters and reduces bandwidth usage.
+                        </li>
+                        <li>There is the ability to further specify search queries with the option to search by difficulty,category, and type. This allow users to focus on questions related to their level of quiz bowl and subject-choice.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+            </div> <!-- Close content -->
+        </div>
+    </div>
+    <!-- contactModal -->
+    <div id="contactModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="contactLabel">Contact</h3>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body">
+                    <p>
+                        If you have any questions, comments, concerns, suggestions, please send an email to Jacob Reed at <a href="mailto:jacob.alexander.reed@gmail.com">jacob.alexander.reed@gmail.com</a>
+                    </p>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+        
+            </div> <!-- Close content -->
+        </div>
+    </div>
+    <!-- contributorsModal -->
+    <div id="contributorsModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="contributorsLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="contributorsLabel">Contributors</h3>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body">
+                    <strong>Contributors:</strong>
+                    <ul>
+                        <li>Joshua Duncan</li>
+                        <li>Kenji Golimlim</li>
+                        <li>Matt Jackson</li>
+                        <li>Nicholas Karas</li>
+                        <li>Rohit Lalchandani</li>
+                        <li>Dan Pechi</li>
+                        <li>Jacob Reed</li>
+                        <li>Nicholas Wawrykow</li>
+                        <li>Haohang Xu</li>
+                    </ul>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+            </div> <!-- Close content -->
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top" id="logo">Quinterest</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a href="http://hsquizbowl.org/forums/viewtopic.php?f=123&t=14574">Discussion</a>
+                    </li>
+                    <li>
+                        <a href="#about" data-target="#aboutModal" data-toggle="modal">About</a>
+                    </li>
+                    <li>
+                        <a href="#contact" data-target="#contactModal" data-toggle="modal">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#contributors" data-target="#contributorsModal" data-toggle="modal">Contributors</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+
+                        <form id="mainSearch">
+                            <!-- Search Query -->
+                            <div class="row">
+                                <!-- Main Search Bar -->
+                                <div class="col-md-9">
+                                    <div class="form-group form-group-lg">
+                                        <input type='text' autofocus placeholder="What would you like to learn about?" class="form-control" id="searchInput">
+                                    </div>
+                                </div> 
+                                <!-- Search Button Group -->
+                                <div class="col-md-3">
+                                    <div class="btn-group" role="group">
+                                        <button type='button' id="searchButton" class="btn btn-primary" value='Search'>Search</button>
+                                        <div class="btn-group">
+                                          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            Random <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#" class="randomSearch" value="5">5 Questions</a></li>
+                                            <li><a href="#" class="randomSearch" value="10">10 Questions</a></li>
+                                            <li><a href="#" class="randomSearch" value="25">25 Questions</a></li>
+                                            <li><a href="#" class="randomSearch" value="50">50 Questions</a></li>
+                                            <li><a href="#" class="randomSearch" value="100">100 Questions!</a></li>
+                                          </ul>
+                                        </div>
+                                        <button type='button' id="printButton" class="btn btn-primary" value='Print'>Print</button>
+                                    </div>
+                                </div>
+                            </div> <!-- Close Row -->
+
+                            <hr>                        
+
+                            <!-- Start Form Arguments -->
+                            <div class="row"> <!-- First Row -->
+
+                                <!-- Category -->
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="optionCategory">Category</label>
+                                        <div class="row">
+                                            <div class="col-md-8 col-md-offset-2">
+                                            <select id="optionCategory" class="form-control input-sm">
+                                                <option value="All">All</option>
+                                                <option value="Literature">Literature</option>
+                                                <option value="History">History</option>
+                                                <option value="Science">Science</option>
+                                                <option value="Fine Arts">Fine Arts</option>
+                                                <option value="Religion">Religion</option>
+                                                <option value="Mythology">Mythology</option>
+                                                <option value="Philosophy">Philosophy</option>
+                                                <option value="Social Science">Social Science</option>
+                                                <option value="Geography">Geography</option>
+                                                <option value="Current Events">Current Events</option>
+                                                <option value="Trash">Trash</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Close Category -->
+
+                                <!-- Search Type -->
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="optionSType">Search Type</label>
+                                        <div class="row">
+                                            <div class="col-md-8 col-md-offset-2">
+                                            <select class="form-control input-sm" id="optionSType">
+                                                <option value="Answer">Answer</option>
+                                                <option value="AnswerQuestion">Question & Answer</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Close Search Type -->
+
+                                <!-- Difficulty -->
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="optionDifficulty">Difficulty</label>
+                                        <div class="row">
+                                            <div class="col-md-8 col-md-offset-2">
+                                            <select class="form-control input-sm" id="optionDifficulty">
+                                                <option value="All">All</option>
+                                                <option value="MS">Middle School</option>
+                                                <option value="HS">High School</option>
+                                                <option value="College">College</option>
+                                                <option value="Open">Open</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Close Difficulty -->                                                            
+
+                            </div> <!-- Close First Row -->
+
+                            <!-- Second Row -->
+                            <div class="row">
+
+                                <!-- Subcategory -->
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="optionSubcategory">Subcategory</label>
+                                        <div class="row">
+                                            <div class="col-md-8 col-md-offset-2">
+                                            <select class="form-control input-sm" id="optionSubcategory">
+                                                <option value="None">None</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Close Subcategory -->
+
+                                <!-- Question Type -->
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="optionQType">Question Type</label>
+                                        <div class="row">
+                                            <div class="col-md-8 col-md-offset-2">
+                                            <select class="form-control input-sm" id="optionQType">
+                                                <option value="TossupBonus">Tossups and Bonuses</option>
+                                                <option value="Tossups">Tossups Only</option>
+                                                <option value="Bonuses">Bonuses Only</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Close Question Type -->                                
+
+                                <!-- Tournament -->
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="optionTournament">Tournament</label>
+                                        <div class="row">
+                                            <div class="col-md-8 col-md-offset-2">
+                                            <select class="form-control input-sm" id='optionTournament'>
+                                                <option value='All'>All</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Close Tournament -->
+
+                            </div> <!-- Close Second Row -->
+
+                            <hr>
+
+                        </form> <!-- Close form -->
+            </div> <!-- Close intro text -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Google Ad -->
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Quinterest Ad -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-5258405341760716"
+                         data-ad-slot="4624876747"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+
+        </div> <!-- Close container -->
+    </header>
+
+    <br>
+
+    <div class="container" id='searchResults'>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-center" style="font-size: 16px">
+                        Created by <strong>Rohit Lalchandani</strong> | Maintained by <strong>Jacob Reed</strong> | 2015
+                    </p>
+                    <span class="copyright">Quinterest 2015</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery.js"></script> <!-- jQuery -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap Core JavaScript -->
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.js"></script>
+
+    <!-- Quinterest Script -->
+    <script>
+
+        // Get the search parameters from input
+        function getFormParameters(limit) {
+            return {
+                "limit": limit,
+                "info": $("#searchInput").val(),
+                "categ": $("#optionCategory").val(),
+                "sub": $("#optionSubcategory").val(),
+                "stype": $("#optionSType").val(),
+                "qtype": $("#optionQType").val(),
+                "difficulty": $("#optionDifficulty").val(),
+                "tournamentyear": $("#optionTournament").val()
+            };
+        }
+
+        function getRandomParameters(num) {
+            return {
+                "amount": num,
+                "categ": $("#optionCategory").val(),
+                "sub": $("#optionSubcategory").val(),
+                "qtype": $("#optionQType").val(),
+                "difficulty": $("#optionDifficulty").val(),
+                "tournamentyear": $("#optionTournament").val()
+            };
+        }
+        
+        // Load tournament list into search form
+        function loadTournaments() {
+            var params = getFormParameters();
+            $.get("php/loadTournaments.php", {qtype: params.qtype, difficulty: params.difficulty}, function (data) {
+                $("#optionTournament").replaceWith(data);
+            });
+        }
+
+        function loadAllTossups() {
+                $('#loadAllTossups').html("<div class='row' id='tossupLoad'><div class='col-md-12'><center><img src='img/ajax-loader.gif'></center></div></div><br>").fadeIn();
+                var parameters = getFormParameters("no");
+                parameters['qtype'] = "Tossups";
+                $.get("php/searchDatabase.php", parameters, function (data) {
+                    $('#loadAllTossups').remove();
+                    $("#tossupResults").append(data);
+                });
+        }
+
+        function loadAllBonuses() {
+                $('#loadAllBonuses').html("<div class='row' id='bonusLoad'><div class='col-md-12'><center><img src='img/ajax-loader.gif'></center></div></div><br>").fadeIn();
+                var parameters = getFormParameters("no");
+                parameters['qtype'] = "Bonuses";
+                $.get("php/searchDatabase.php", parameters, function (data) {
+                    $('#loadAllBonuses').remove();
+                    $("#bonusResults").append(data);
+                });
+        }
+
+        // Start jQuery
+        $(function () {
+
+            /* Reset form and clear results if clicking Quinterest logo */
+            $('#logo').click(function (event) {
+                $('#mainSearch')[0].reset();
+                $('#searchResults').fadeOut(400, function() {
+                    $(this).replaceWith("<div class='container' id='searchResults'></div>");
+                });
+            });
+
+            /* load subcategories from form change */
+            $("#optionCategory").change(function () {
+                $.get("php/loadSubcategories.php", {category: $("#optionCategory").val()}, function (data) {
+                    $("#optionSubcategory").replaceWith(data);
+                });
+            });
+
+            /* load tournament list from form change */
+            $("#optionQType,#optionDifficulty").change(loadTournaments);
+
+            /* conduct regular database search */
+            $("#searchButton").click(function (event) {
+                $.get("php/searchDatabase.php", getFormParameters("yes"), function (data) {
+                    $("#searchResults").hide().html(data).fadeIn();
+                });
+            });
+
+            /* For real time results */
+            $("#searchInput").keyup(function (event) {
+                if ($("#searchInput").val().length >= 2) {
+                    $.get("php/searchDatabase.php", getFormParameters("yes"), function (data) {
+                        $("#searchResults").html(data);
+                        });
+                }
+            });
+
+            /* If user presses return instead of clicking search */
+            $("#searchInput").keydown(function (event) {
+                if (event.keyCode == 13) {
+                    $("#searchButton").click();
+                }
+            });
+
+            /* Get random results */
+            $(".randomSearch").click(function (event) {
+                var num = $(this).attr("value");
+
+                /* Clear results */
+                $("#searchResults").fadeOut(400, function() {
+
+                    $(this).fadeOut().html("<div class='row'><div class='col-md-12'><center><img src='img/ajax-loader.gif'></center></div></div>").fadeIn();
+
+                    /* Get random results */
+                    $.get("php/randomResults.php", getRandomParameters(num), function (data) {
+                    $("#searchResults").hide().html(data).fadeIn();
+                    });
+                });
+            });
+
+            $("#printButton").click(function (event) {
+                if ($("#loadAllTossupsButton").length || $('#loadAllBonusesButton').length) {
+                    alert("Please load all the question first before printing by clicking the load buttons below.");
+                } else {
+                    window.print()
+                }
+            });
+
+            /* Loads the remaining tossups */
+            $(document).on("click", "#loadAllTossupsButton", function (event) {
+                loadAllTossups();
+            });
+
+            /* Loads the remaining bonuses */
+            $(document).on("click", "#loadAllBonusesButton", function (event) {
+                loadAllBonuses();
+            });
+
+            loadTournaments();
+        });
+    </script>
+
+</body>
+
+</html>

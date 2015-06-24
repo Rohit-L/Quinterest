@@ -5,8 +5,8 @@
 
 session_start();
 /* Connect to SQL Database */ 
-$dbc = mysql_connect("quinterestdb.db.11269592.hostedresource.com","quinterestdb","Quinterest!@#4") OR die ('Could not connect to MySQL: ' . mysql_error() ); 
-mysql_select_db("quinterestdb") OR die ('Could not select the database: ' . mysql_error() );
+$dbc = mysql_connect("****","****","****") OR die ('Could not connect to MySQL: ' . mysql_error() ); 
+mysql_select_db("****") OR die ('Could not select the database: ' . mysql_error() );
 
 /* Get the Question Type */
 $qtype = $_GET['qtype'];

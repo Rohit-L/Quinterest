@@ -1,8 +1,8 @@
 <?php
 
 /* Connecting to mySQL database */
-mysql_connect("quinterestdb.db.11269592.hostedresource.com","quinterestdb","Quinterest!@#4");
-mysql_select_db("quinterestdb");
+mysql_connect("****","****","****");
+mysql_select_db("****");
 
 $tossup = false;
 $bonus = false;
